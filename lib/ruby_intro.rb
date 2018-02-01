@@ -3,15 +3,27 @@
 # Part 1
 
 def sum arr
-  # YOUR CODE HERE
+  if arr.empty?
+    return 0
+  else
+    return arr.inject(:+)
+  end
 end
 
 def max_2_sum arr
-  # YOUR CODE HERE
+  if arr.empty?
+    return 0
+  else
+    return arr.max(2).reduce(:+)
+  end
 end
 
 def sum_to_n? arr, n
-  # YOUR CODE HERE
+  if arr.empty? || arr.length == 1
+    return false
+  else
+    return !!arr.uniq.combination(2).detect { |a, b| a + b == n }
+  end
 end
 
 # Part 2
